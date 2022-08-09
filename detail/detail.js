@@ -4,9 +4,9 @@ import { renderDogDetail } from '../render-utils.js';
 const dogDetailContainer = document.getElementById('dog-detail-container');
 
 // on load
-const star = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 async function loadData() {
-    const data = await getDog(star.get('id'));
+    const data = await getDog(params.get('id'));
     const dogDiv = renderDogDetail(data);
     dogDetailContainer.append(dogDiv);
 }
